@@ -13,7 +13,7 @@ const translations = {
 
           Wie bezahle ich, wenn das Clubhaus nicht besetzt ist ...?<br /><br />
 
-          Am besten buchst du deinen Platz online über GotCourts (Debit-/Kreditkarte). Auf dieser Platform kannst du zudem jederzeit prüfen, ob am gewünschten Spieltermin noch ein Platz frei ist oder nicht.<br /><br />
+          Am besten buchst du deinen Platz online über Availio (Debit-/Kreditkarte). Auf dieser Platform kannst du zudem jederzeit prüfen, ob am gewünschten Spieltermin noch ein Platz frei ist oder nicht.<br /><br />
 
           Du kannst den Platz auch direkt auf der Anlage beim Clubhaus buchen. Vor Ort ist ein Tablet mit dem entsprechenden Buchungssystem installiert. Zusätzlich hast du auch die Möglichkeit, die Platzmiete mit Bargeld oder per TWINT zu bezahlen. Bei Barzahlung bitten wir dich, den entsprechenden Geldbetrag in den dafür vorgesehenen Briefumschlag zu legen und den Umschlag in den Briefkasten zu werfen. Der Briefkasten ist beim Clubhaus, rechts neben der Türe und wird regelmässig geleert.<br /><br />
 
@@ -36,7 +36,7 @@ const translations = {
 
           How do I pay if the clubhouse is not staffed ...?<br /><br />
 
-          The best way is to book your court online via GotCourts (debit/credit card). On this platform, you can also check at any time whether a court is available at your desired playing time.<br /><br />
+          The best way is to book your court online via Availio (debit/credit card). On this platform, you can also check at any time whether a court is available at your desired playing time.<br /><br />
 
           You can also book the court directly at the facility near the clubhouse. On-site, there is a tablet with the corresponding booking system installed. Additionally, you also have the option to pay the court fee in cash or via TWINT. For cash payments, we kindly ask you to place the corresponding amount in the designated envelope and drop the envelope into the mailbox. The mailbox is located at the clubhouse, to the right of the door, and is regularly emptied.<br /><br />
 
