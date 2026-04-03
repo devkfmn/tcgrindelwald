@@ -61,177 +61,162 @@
       mainNav.classList.toggle('open');
     });
 
+    const calendarEvents = [
+      {
+        date: "2026-04-25",
+        link: null,
+        de: {
+          title: "Eröffnung Tennisanlage",
+          description: "Offizielle Eröffnung der Tennissaison (Wetter-/Platzabhängig)."
+        },
+        en: {
+          title: "Opening of Tennis Facility",
+          description: "Official opening of the tennis season (weather/condition dependent)."
+        }
+      },
+      {
+        date: "2026-05-01",
+        link: null,
+        de: {
+          title: "Hauptversammlung",
+          description: "Unsere Hauptversammlung im Klubhaus um 20:00 Uhr."
+        },
+        en: {
+          title: "General Assembly",
+          description: "Our general assembly at the clubhouse at 8:00 PM."
+        }
+      },
+      {
+        date: "2026-05-02",
+        link: null,
+        de: {
+          title: "Beginn Interclub",
+          description: "Unsere Teams starten in die Interclub-Saison."
+        },
+        en: {
+          title: "Start of Interclub",
+          description: "Our teams begin the Interclub season."
+        }
+      },
+      {
+        date: "2026-05-05",
+        link: null,
+        de: {
+          title: "Tennistreff mit Apéro",
+          description: "Gemütlicher Tennistreff mit Apéro im Klubhaus."
+        },
+        en: {
+          title: "Tennis Meetup with Aperitif",
+          description: "Casual tennis meetup with aperitif at the clubhouse."
+        }
+      },
+      {
+        date: "2026-05-13",
+        link: null,
+        de: {
+          title: "Schüler- und Schnuppertennis",
+          description: "Unsere kleinen Roger Federers and Martina Hingis starten in die Saison."
+        },
+        en: {
+          title: "Student and Trial Tennis",
+          description: "Our young Roger Federers and Martina Hingis start the season."
+        }
+      },
+      {
+        date: "2026-05-20",
+        link: null,
+        de: {
+          title: "Eltern- und Schülertennis",
+          description: "Gemütliches Tennis für Eltern und Kinder."
+        },
+        en: {
+          title: "Parent and Student Tennis",
+          description: "Casual tennis for parents and children."
+        }
+      },
+      {
+        date: "2026-05-23",
+        link: "https://www.mytennis.ch/de/turniere/157231",
+        de: {
+          title: "GHELMA - Pfingstturnier",
+          description: "Öffentliches Turnier vom 07. bis 09. Juni."
+        },
+        en: {
+          title: "GHELMA - Pentecost Tournament",
+          description: "Public tournament from June 7 to June 9."
+        }
+      },
+      {
+        date: "2026-08-14",
+        link: null,
+        de: {
+          title: "Jassmeisterschaft TC Grindelwald",
+          description: "Unser alljährliches Jassturnier im Klubhaus."
+        },
+        en: {
+          title: "Jass Championship TC Grindelwald",
+          description: "Our annual Jass tournament at the clubhouse."
+        }
+      },
+      {
+        date: "2026-08-15",
+        link: "https://www.mytennis.ch/de/turniere/157633",
+        de: {
+          title: "Clubmeisterschaften im Doppel",
+          description: "Clubinternes Turnier für alle Mitglieder."
+        },
+        en: {
+          title: "Club Championship Doubles",
+          description: "Internal club tournament for all members."
+        }
+      },
+      {
+        date: "2026-08-29",
+        link: "https://www.mytennis.ch/de/turniere/157632",
+        de: {
+          title: "Clubmeisterschaft im Einzel",
+          description: "Clubinternes Turnier für alle Mitglieder."
+        },
+        en: {
+          title: "Club Championship Singles",
+          description: "Internal club tournament for all members."
+        }
+      },
+      {
+        date: "2026-09-16",
+        link: null,
+        de: {
+          title: "Schüler Abschlussturnier",
+          description: "Unsere Schüler kämpfen um den Titel."
+        },
+        en: {
+          title: "Student Final Tournament",
+          description: "Our students compete for the title."
+        }
+      }
+    ];
+
     const translations = {
       de: {
         menu: ["Kalender", "Club", "Anlage", "Kontakt"],
         title: "KALENDER",
-        events: [
-          {
-            date: "2025-04-25",
-            title: "Hauptversammlung",
-            description: "Unsere Hauptversammlung im Klubhaus um 20:00 Uhr.",
-            link: null
-          },
-          {
-            date: "2025-04-26",
-            title: "Eröffnung Tennisanlage",
-            description: "Offizielle Eröffnung der Tennissaison (Wetter-/Platzabhängig).",
-            link: null
-          },
-          {
-            date: "2025-05-03",
-            title: "Beginn Interclub",
-            description: "Unsere Teams starten in die Interclub-Saison.",
-            link: null
-          },
-          {
-            date: "2025-05-06",
-            title: "Tennistreff mit Apéro",
-            description: "Gemütlicher Tennistreff mit Apéro im Klubhaus.",
-            link: null
-          },
-          {
-            date: "2025-05-14",
-            title: "Schüler- und Schnuppertennis",
-            description: "Unsere kleinen Roger Federers and Martina Hingis starten in die Saison.",
-            link: null
-          },
-          {
-            date: "2025-05-21",
-            title: "Eltern- und Schülertennis",
-            description: "Gemütliches Tennis für Eltern und Kinder.",
-            link: null
-          },
-
-          {
-            date: "2025-06-07",
-            title: "GHELMA - Pfingstturnier",
-            description: "Öffentliches Turnier vom 07. bis 09. Juni.",
-            link: "https://www.mytennis.ch/de/turniere/152052"
-          },
-          {
-            date: "2025-07-05",
-            title: "Pfingstegg Cup",
-            description: "Öffentliches Turnier vom 05. bis 06. Juli.",
-            link: "https://www.mytennis.ch/de/turniere/152053"
-          },
-
-          {
-            date: "2025-08-04",
-            title: "Start der Clubmeisterschaft im Einzel",
-            description: "Clubinternes Turnier für alle Mitglieder.",
-          },
-
-          {
-            date: "2025-08-15",
-            title: "Jassmeisterschaft TC Grindelwald",
-            description: "Unser alljährliches Jassturnier im Klubhaus.",
-          },
-
-          {
-            date: "2025-08-16",
-            title: "Clubmeisterschaften im Doppel",
-            description: "Clubinternes Turnier für alle Mitglieder.",
-          },
-          {
-            date: "2025-09-13",
-            title: "Halbfinale und Finale der Clubmeisterschaft im Einzel",
-            description: "Clubinternes Turnier für alle Mitglieder.",
-          },
-          {
-            date: "2025-09-10",
-            title: "Schüler Abschlussturnier",
-            description: "Unsere Schüler kämpfen um den Titel.",
-          },
-        ],
         registerText: "Anmeldung"
       },
       en: {
         menu: ["Calendar", "Club", "Facility", "Contact"],
         title: "CALENDAR",
-        events: [
-          {
-            date: "2025-04-25",
-            title: "General Assembly",
-            description: "Our general assembly at the clubhouse at 8:00 PM.",
-            link: null
-          },
-          {
-            date: "2025-04-26",
-            title: "Opening of Tennis Facility",
-            description: "Official opening of the tennis season (weather/condition dependent).",
-            link: null
-          },
-          {
-            date: "2025-05-03",
-            title: "Start of Interclub",
-            description: "Our teams begin the Interclub season.",
-            link: null
-          },
-          {
-            date: "2025-05-06",
-            title: "Tennis Meetup with Aperitif",
-            description: "Casual tennis meetup with aperitif at the clubhouse.",
-            link: null
-          },
-          {
-            date: "2025-05-14",
-            title: "Student and Trial Tennis",
-            description: "Our young Roger Federers and Martina Hingis start the season.",
-            link: null
-          },
-          {
-            date: "2025-05-21",
-            title: "Parent and Student Tennis",
-            description: "Casual tennis for parents and children.",
-            link: null
-          },
-          {
-            date: "2025-06-07",
-            title: "GHELMA - Pentecost Tournament",
-            description: "Public tournament from June 7 to June 9.",
-            link: "https://www.mytennis.ch/de/turniere/152052"
-          },
-          {
-            date: "2025-07-05",
-            title: "Pfingstegg Cup",
-            description: "Public tournament from July 5 to July 6.",
-            link: "https://www.mytennis.ch/de/turniere/152053"
-          },
-          {
-            date: "2025-08-04",
-            title: "Start of Club Championship Singles",
-            description: "Internal club tournament for all members.",
-            link: null
-          },
-          {
-            date: "2025-08-15",
-            title: "Jass Championship TC Grindelwald",
-            description: "Our annual Jass tournament at the clubhouse.",
-            link: null
-          },
-          {
-            date: "2025-08-16",
-            title: "Club Championship Doubles",
-            description: "Internal club tournament for all members.",
-            link: null
-          },
-          {
-            date: "2025-09-13",
-            title: "Semifinals and Finals of Club Championship Singles",
-            description: "Internal club tournament for all members.",
-            link: null
-          },
-          {
-            date: "2025-09-10",
-            title: "Student Final Tournament",
-            description: "Our students compete for the title.",
-            link: null
-          }
-        ],
         registerText: "Register"
       }
     };
+
+    function eventsForLang(lang) {
+      return calendarEvents.map((e) => ({
+        date: e.date,
+        link: e.link ?? null,
+        title: e[lang].title,
+        description: e[lang].description
+      }));
+    }
 
     function formatDate(dateString, lang) {
       const date = new Date(dateString);
@@ -267,7 +252,7 @@
         item.textContent = content.menu[index];
       });
       document.getElementById("main-title").textContent = content.title;
-      renderEvents(content.events, content.registerText, lang);
+      renderEvents(eventsForLang(lang), content.registerText, lang);
     }
 
     // Apply saved language or default to DE on page load
