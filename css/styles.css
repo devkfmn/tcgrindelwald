@@ -17,7 +17,7 @@ html{
 }
 
 body{
-  font-family:"Poppins",system-ui,sans-serif;
+  font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
   color:var(--green-text);
   background:var(--red-frame);
   min-height:100vh;
@@ -43,6 +43,8 @@ body{
   justify-content: center;
   padding: 0 1rem;
   z-index: 10; /* Ensure it stays above other elements */
+  border-bottom: 4px solid var(--red-frame);
+  box-shadow: 0 4px 0 rgba(198, 24, 36, 0.35);
 }
 
 /* logo overlaps 20 % into main */
@@ -70,6 +72,15 @@ body{
   white-space:nowrap;
 }
 .main-nav a:hover{opacity:.8}
+
+/* retro active-page indicator */
+body[data-page="kalender"] .main-nav a[href="kalender.html"],
+body[data-page="club"] .main-nav a[href="club.html"],
+body[data-page="anlage"] .main-nav a[href="anlage.html"],
+body[data-page="kontakt"] .main-nav a[href="kontakt.html"]{
+  border-bottom:4px solid var(--red-frame);
+  padding-bottom:2px;
+}
 
 /* extra gap after “Club” so logo fits neatly */
 @media (min-width:700px){
@@ -125,18 +136,46 @@ body{
 /* ----------  MAIN CONTENT  ---------- */
 main{
   padding-top: calc(var(--nav-height) + 2rem); /* Add space for the fixed header */
-  background:var(--peach-bg);
+  background-color:var(--peach-bg);
+  /* subtle aged-paper grain layered over the peach background */
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.05'/%3E%3C/svg%3E");
   margin:0 20px;
   flex:1;
   padding-bottom:2rem;
   text-align:left;
 }
 h1{
-  font-size:2.1rem; /* Reduced font size */
-  letter-spacing:2px;
-  font-weight:900;
+  font-family:"Trebuchet MS","Helvetica Neue",Arial,sans-serif;
+  font-size:2rem; /* Reduced font size */
+  letter-spacing:1px;
+  line-height:1.15;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--red-frame);
   margin-bottom:1rem;
   margin-top: 1.5rem; /* Add more space above each h1 */
+}
+
+/* retro magazine-style "tab" accent before each heading */
+.text-section h1::before,
+.container > h1::before{
+  content:"";
+  display:inline-block;
+  width:26px;
+  height:14px;
+  margin-right:12px;
+  background:var(--orange-nav);
+  border:2px solid var(--red-frame);
+  vertical-align:middle;
+  transform:translateY(-2px);
+}
+
+/* card titles share the smoother retro display face */
+.event-list-container li h3,
+.board-list h3,
+.interclub-list h3{
+  font-family:"Trebuchet MS","Helvetica Neue",Arial,sans-serif;
+  letter-spacing:.5px;
 }
 
 /* ----------  FOOTER  ---------- */
@@ -146,6 +185,9 @@ footer{
   text-align:center;
   padding:1.2rem 0;
   font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  border-top:4px solid var(--red-frame);
 }
 
 /* ----------  RESPONSIVE BREAKPOINTS ---------- */
@@ -196,23 +238,34 @@ footer{
 
 .event-list-container li {
   border: 2px solid var(--red-frame) !important;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: var(--peach-bg) !important;
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 14px;
+  box-shadow: 5px 5px 0 var(--red-frame);
+  transition: transform .15s, box-shadow .15s;
+}
+
+.event-list-container li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--red-frame);
 }
 
 .event-link {
   color: var(--green-text);
   font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
   text-decoration: none;
+  background-color: var(--white);
   border: 2px solid var(--green-text);
-  padding: 5px 10px;
-  border-radius: 5px;
+  padding: 7px 14px;
+  border-radius: 4px;
   margin-top: 10px;
+  margin-right: 8px;
   display: inline-block;
-  transition: background-color 0.3s, color 0.3s;
+  box-shadow: 3px 3px 0 var(--green-text);
+  transition: background-color 0.2s, color 0.2s, transform 0.1s, box-shadow 0.1s;
 }
 
 .event-link:hover {
@@ -220,12 +273,19 @@ footer{
   color: var(--white);
 }
 
+.event-link:active {
+  transform: translate(3px, 3px);
+  box-shadow: none;
+}
+
 .text-section {
   padding-bottom: 10px;
 }
 
 #map {
-  border-radius: 10px;
+  border-radius: 6px;
+  border: 2px solid var(--red-frame);
+  box-shadow: 5px 5px 0 var(--red-frame);
   overflow: hidden; /* Ensure the content respects the border radius */
   z-index: 0; /* Ensure the map is below the menu and header */
   position: relative; /* Maintain proper stacking context */
@@ -238,11 +298,11 @@ footer{
 
 #board-list li {
   border: 2px solid white;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 14px;
+  box-shadow: 5px 5px 0 var(--red-frame);
   display: flex;
   align-items: center;
   gap: 15px;
@@ -251,7 +311,7 @@ footer{
 #board-list img {
   width: 150px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 #board-list p {
@@ -268,17 +328,23 @@ footer{
   align-items: center;
   gap: 15px;
   border: 2px solid var(--red-frame) !important;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: var(--peach-bg) !important;
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 14px;
+  box-shadow: 5px 5px 0 var(--red-frame);
+  transition: transform .15s, box-shadow .15s;
+}
+
+.board-list li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--red-frame);
 }
 
 .board-image {
   width: 200px !important;
   height: auto;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .interclub-list {
@@ -291,18 +357,24 @@ footer{
   align-items: center;
   gap: 15px;
   border: 2px solid var(--red-frame) !important;
-  border-radius: 10px;
+  border-radius: 6px;
   background-color: var(--peach-bg) !important;
   padding: 15px;
-  margin-bottom: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-bottom: 14px;
+  box-shadow: 5px 5px 0 var(--red-frame);
+  transition: transform .15s, box-shadow .15s;
+}
+
+.interclub-list li:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0 var(--red-frame);
 }
 
 .interclub-image {
   width: 100%; /* Dynamic width */
   max-width: 440px; /* Maximum width */
   height: auto;
-  border-radius: 10px;
+  border-radius: 6px;
 }
 
 .board-info {
@@ -434,4 +506,54 @@ footer{
 .event-flyer-thumb:hover {
   transform: scale(1.02);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ----------  SPONSOR LIST (retro) ---------- */
+#sponsors-list li {
+  position: relative;
+  padding: 6px 0 6px 22px;
+  border-bottom: 1px dashed var(--red-frame);
+}
+
+#sponsors-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 9px;
+  height: 9px;
+  transform: translateY(-50%);
+  background: var(--orange-nav);
+  border: 1.5px solid var(--red-frame);
+}
+
+/* ----------  VOLLEY LIST (retro chips) ---------- */
+#volley-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+#volley-list li a {
+  display: inline-block;
+  padding: 5px 11px;
+  font-weight: bold;
+  letter-spacing: .5px;
+  text-decoration: none;
+  color: var(--green-text);
+  background: var(--white);
+  border: 2px solid var(--green-text);
+  border-radius: 4px;
+  box-shadow: 2px 2px 0 var(--green-text);
+  transition: background-color .2s, color .2s, transform .1s, box-shadow .1s;
+}
+
+#volley-list li a:hover {
+  background: var(--green-text);
+  color: var(--white);
+}
+
+#volley-list li a:active {
+  transform: translate(2px, 2px);
+  box-shadow: none;
 }
