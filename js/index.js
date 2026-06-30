@@ -62,3 +62,9 @@ createLanguageSwitcher(translations, content => {
   if (reservationParagraph) reservationParagraph.innerHTML = reservation.paragraph || '';
 });
 
+document.addEventListener('DOMContentLoaded', () => {
+  if (typeof openFlyer === 'function') {
+    openFlyer('images/flyer_jassturnier_2026.png', 'Jassturnier (Partner-Schieber) - 14. August 2026');
+  }
+});
+

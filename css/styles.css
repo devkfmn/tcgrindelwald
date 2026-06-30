@@ -371,3 +371,67 @@ footer{
   background-color: var(--green-text);
   color: var(--white);
 }
+
+/* ----------  FLYER LIGHTBOX  ---------- */
+.flyer-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 120, 110, 0.85); /* --green-text with transparency */
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.flyer-overlay.open {
+  display: flex;
+}
+
+.flyer-overlay img {
+  max-width: 100%;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.flyer-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  background-color: var(--white);
+  color: var(--green-text);
+  border: none;
+  width: 44px;
+  height: 44px;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.flyer-close:hover {
+  background-color: var(--green-text);
+  color: var(--white);
+}
+
+.event-flyer-thumb {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: 2px solid var(--green-text);
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.event-flyer-thumb:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
