@@ -25,6 +25,40 @@
   let prevRacketHeadX = 0;
   let prevRacketHeadY = 0;
   let lastHitTime = 0;
+  let pointerQuery = null;
+  let motionQuery = null;
+
+  function isGameSupported() {
+    return (
+      !motionQuery.matches &&
+      pointerQuery.matches
+    );
+  }
+
+  function destroyGame() {
+    if (spawnTimer) {
+      clearTimeout(spawnTimer);
+      spawnTimer = null;
+    }
+    if (activeBall) activeBall.cleanup();
+    if (racket) {
+      racket.remove();
+      racket = null;
+    }
+    document.documentElement.classList.remove('tennis-game-active', 'tennis-game-pointer');
+    isFirstSpawn = true;
+  }
+
+  function syncGameState() {
+    if (isGameSupported()) {
+      if (!racket) {
+        createRacket();
+        scheduleNextSpawn();
+      }
+      return;
+    }
+    destroyGame();
+  }
 
   function randomBetween(min, max) {
     return min + Math.random() * (max - min);
@@ -250,9 +284,11 @@
   }
 
   function init() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    pointerQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
+    motionQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-    createRacket();
+    pointerQuery.addEventListener('change', syncGameState);
+    motionQuery.addEventListener('change', syncGameState);
 
     window.addEventListener('resize', () => {
       if (!activeBall) return;
@@ -269,6 +305,7 @@
     });
 
     document.addEventListener('visibilitychange', () => {
+      if (!isGameSupported()) return;
       if (document.hidden) {
         if (spawnTimer) {
           clearTimeout(spawnTimer);
@@ -279,7 +316,7 @@
       }
     });
 
-    scheduleNextSpawn();
+    syncGameState();
   }
 
   if (document.readyState === 'loading') {
