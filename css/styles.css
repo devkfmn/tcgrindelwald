@@ -11,11 +11,6 @@
 /* ----------  RESET / BASE  ---------- */
 *{box-sizing:border-box;margin:0;padding:0}
 
-/* >>> CUSTOM CURSOR FOR THE WHOLE PAGE <<< */
-html{
-  cursor:url("../icons/tennis.png") 16 16, auto;
-}
-
 body{
   font-family:"Helvetica Neue",Arial,system-ui,sans-serif;
   color:var(--green-text);
@@ -556,4 +551,53 @@ footer{
 #volley-list li a:active {
   transform: translate(2px, 2px);
   box-shadow: none;
+}
+
+/* ----------  TENNIS GAME (racket cursor + ball)  ---------- */
+html.tennis-game-active {
+  cursor: none;
+}
+
+html.tennis-game-active.tennis-game-pointer,
+html.tennis-game-active.tennis-game-pointer * {
+  cursor: pointer !important;
+}
+
+html.tennis-game-active.tennis-game-pointer .tennis-game-racket {
+  opacity: 0;
+}
+
+.tennis-game-racket {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 52px;
+  height: 52px;
+  pointer-events: none;
+  z-index: 1001;
+  will-change: transform;
+  user-select: none;
+  transform-origin: 50% 50%;
+  transition: opacity 0.15s ease;
+}
+
+.tennis-game-ball {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  pointer-events: none;
+  z-index: 5;
+  will-change: transform;
+  user-select: none;
+  border-radius: 50%;
+  border: 2.5px solid #000;
+  box-sizing: border-box;
+  background-color: #c8e600;
+}
+
+.tennis-game-ball--fade {
+  opacity: 0;
+  transition: opacity 0.4s ease-out;
 }
