@@ -15,7 +15,7 @@ const translations = {
 
           Am besten buchst du deinen Platz online über Availio (Debit-/Kreditkarte). Auf dieser Platform kannst du zudem jederzeit prüfen, ob am gewünschten Spieltermin noch ein Platz frei ist oder nicht.<br /><br />
 
-          Du kannst den Platz auch direkt auf der Anlage beim Clubhaus buchen. Vor Ort ist ein Tablet mit dem entsprechenden Buchungssystem installiert. Zusätzlich hast du auch die Möglichkeit, die Platzmiete mit Bargeld oder per TWINT zu bezahlen. Bei Barzahlung bitten wir dich, den entsprechenden Geldbetrag in den dafür vorgesehenen Briefumschlag zu legen und den Umschlag in den Briefkasten zu werfen. Der Briefkasten ist beim Clubhaus, rechts neben der Türe und wird regelmässig geleert.<br /><br />
+          Du kannst die Platzmiete auch direkt vor Ort beim Clubhaus bezahlen, bar oder per TWINT. Bei Barzahlung bitten wir dich, den entsprechenden Geldbetrag in den dafür vorgesehenen Briefumschlag zu legen und den Umschlag in den Briefkasten zu werfen. Der Briefkasten ist beim Clubhaus, rechts neben der Türe und wird regelmässig geleert.<br /><br />
 
           Wir bitten um FAIRPLAY auch neben dem Tennisplatz.<br /><br />
 
@@ -38,7 +38,7 @@ const translations = {
 
           The best way is to book your court online via Availio (debit/credit card). On this platform, you can also check at any time whether a court is available at your desired playing time.<br /><br />
 
-          You can also book the court directly at the facility near the clubhouse. On-site, there is a tablet with the corresponding booking system installed. Additionally, you also have the option to pay the court fee in cash or via TWINT. For cash payments, we kindly ask you to place the corresponding amount in the designated envelope and drop the envelope into the mailbox. The mailbox is located at the clubhouse, to the right of the door, and is regularly emptied.<br /><br />
+          You can also pay the court fee on site at the clubhouse, in cash or via TWINT. For cash payments, we kindly ask you to place the corresponding amount in the designated envelope and drop the envelope into the mailbox. The mailbox is located at the clubhouse, to the right of the door, and is regularly emptied.<br /><br />
 
           We kindly ask for FAIR PLAY even off the tennis court.<br /><br />
 
