@@ -9,7 +9,7 @@ const translations = {
       title: 'RESERVIERUNGEN',
       paragraph: `Hier können Sie Ihre Tennisplätze reservieren.<br /><br />
 
-          Pro Stunde CHF 24.00<br /><br />
+          Pro Stunde CHF 25.00<br /><br />
 
           Wie bezahle ich, wenn das Clubhaus nicht besetzt ist ...?<br /><br />
 
@@ -32,7 +32,7 @@ const translations = {
       title: 'RESERVATIONS',
       paragraph: `Here you can reserve your tennis courts.<br /><br />
 
-          CHF 24.00 per hour<br /><br />
+          CHF 25.00 per hour<br /><br />
 
           How do I pay if the clubhouse is not staffed ...?<br /><br />
 
