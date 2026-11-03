@@ -91,7 +91,7 @@
     if (!el || el === document.body || el === document.documentElement) return false;
     if (el.closest('.tennis-game-racket, .tennis-game-ball')) return false;
     return !!el.closest(
-      'a, button, input, select, textarea, label, [onclick], .event-link, .burger, .flyer-close, .event-flyer-thumb, .popup-close'
+      'a, button, input, select, textarea, label, [onclick], .event-link, .burger, .flyer-close, .event-flyer-thumb, .popup-close, .notice-x, .notice-close, .notice-lang'
     );
   }
 

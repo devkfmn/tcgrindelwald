@@ -439,6 +439,130 @@ footer{
   color: var(--white);
 }
 
+/* ----------  COURT CLOSURE NOTICE  ---------- */
+html.notice-open {
+  overflow: hidden;
+}
+
+.notice-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 120, 110, 0.85);
+  z-index: 2000;
+  align-items: center;
+  justify-content: center;
+  padding: max(1.25rem, env(safe-area-inset-top)) max(1.25rem, env(safe-area-inset-right)) max(1.25rem, env(safe-area-inset-bottom)) max(1.25rem, env(safe-area-inset-left));
+  overflow-y: auto;
+}
+
+.notice-overlay.open {
+  display: flex;
+}
+
+.notice-dialog {
+  position: relative;
+  background-color: var(--peach-bg);
+  color: var(--green-text);
+  border: 2px solid var(--red-frame);
+  border-radius: 6px;
+  box-shadow: 5px 5px 0 var(--red-frame);
+  padding: 2.4rem 1.5rem 1.5rem;
+  max-width: 440px;
+  width: 100%;
+  max-height: min(90vh, 640px);
+  overflow-y: auto;
+}
+
+.notice-dialog h2 {
+  font-family: "Trebuchet MS", "Helvetica Neue", Arial, sans-serif;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
+  line-height: 1.15;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--red-frame);
+  margin-bottom: 1rem;
+  padding-right: 3rem;
+}
+
+.notice-dialog h2::before {
+  content: "";
+  display: inline-block;
+  width: 26px;
+  height: 14px;
+  margin-right: 12px;
+  background: var(--orange-nav);
+  border: 2px solid var(--red-frame);
+  vertical-align: middle;
+  transform: translateY(-2px);
+}
+
+.notice-dialog p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 1.4rem;
+}
+
+.notice-langs {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.notice-lang {
+  background: none;
+  border: none;
+  color: var(--green-text);
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  padding: 0.25rem 0;
+}
+
+.notice-lang[aria-pressed="true"] {
+  border-bottom: 3px solid var(--red-frame);
+}
+
+.notice-x {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background-color: var(--white);
+  color: var(--green-text);
+  border: 2px solid var(--green-text);
+  width: 44px;
+  height: 44px;
+  font-size: 1.8rem;
+  line-height: 1;
+  font-weight: bold;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--green-text);
+}
+
+.notice-x:hover,
+.notice-lang:hover {
+  opacity: 0.8;
+}
+
+.notice-x:hover {
+  background-color: var(--green-text);
+  color: var(--white);
+  opacity: 1;
+}
+
+.notice-overlay :focus-visible {
+  outline: 3px solid var(--orange-nav);
+  outline-offset: 3px;
+}
+
+.notice-close {
+  margin-top: 0;
+}
+
 /* ----------  FLYER LIGHTBOX  ---------- */
 .flyer-overlay {
   display: none;
