@@ -3,7 +3,7 @@ const translations = {
     menu: ['Kalender', 'Club', 'Anlage', 'Kontakt'],
     welcome: {
       title: 'AKTUELLE NEWS',
-      paragraph: 'Unsere Tennisplätze sind offen, herzlich willkommen! Wir freuen uns, euch in der neuen Saison auf der Anlage zu sehen.'
+      paragraph: 'Unsere Tennisplätze sind bis Ende April 2027 geschlossen.'
     },
     reservation: {
       title: 'RESERVIERUNGEN',
@@ -26,7 +26,7 @@ const translations = {
     menu: ['Calendar', 'Club', 'Facility', 'Contact'],
     welcome: {
       title: 'LATEST NEWS',
-      paragraph: 'Our tennis courts are open, welcome! We look forward to seeing you on the courts this season.'
+      paragraph: 'Our tennis courts are closed until the end of April 2027.'
     },
     reservation: {
       title: 'RESERVATIONS',
