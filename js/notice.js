@@ -5,13 +5,11 @@
     de: {
       title: 'Plätze geschlossen',
       body: 'Unsere Tennisplätze sind bis Ende April 2027 geschlossen.',
-      close: 'Schliessen',
       closeAria: 'Hinweis schliessen'
     },
     en: {
       title: 'Courts closed',
       body: 'Our tennis courts are closed until the end of April 2027.',
-      close: 'Close',
       closeAria: 'Close notice'
     }
   };
@@ -20,7 +18,6 @@
   let dialog = null;
   let titleEl = null;
   let bodyEl = null;
-  let closeBtn = null;
   let iconBtn = null;
   let lastFocus = null;
 
@@ -50,7 +47,6 @@
     if (!overlay) return;
     titleEl.textContent = content.title;
     bodyEl.textContent = content.body;
-    closeBtn.textContent = content.close;
     iconBtn.setAttribute('aria-label', content.closeAria);
     overlay.querySelectorAll('[data-lang]').forEach((btn) => {
       btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
@@ -126,7 +122,7 @@
     document.addEventListener('keydown', onKeydown);
     applyLanguage(currentLang());
     window.requestAnimationFrame(() => {
-      closeBtn.focus();
+      iconBtn.focus();
     });
   }
 
@@ -186,20 +182,14 @@
     bodyEl = document.createElement('p');
     bodyEl.id = 'notice-body';
 
-    closeBtn = document.createElement('button');
-    closeBtn.className = 'event-link notice-close';
-    closeBtn.type = 'button';
-
     dialog.appendChild(iconBtn);
     dialog.appendChild(langs);
     dialog.appendChild(titleEl);
     dialog.appendChild(bodyEl);
-    dialog.appendChild(closeBtn);
     overlay.appendChild(dialog);
     document.body.appendChild(overlay);
 
     iconBtn.addEventListener('click', closeNotice);
-    closeBtn.addEventListener('click', closeNotice);
     overlay.addEventListener('click', (event) => {
       if (event.target === overlay) closeNotice();
     });
