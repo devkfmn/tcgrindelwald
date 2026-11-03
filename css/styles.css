@@ -449,6 +449,7 @@ html.notice-open {
   position: fixed;
   inset: 0;
   background-color: rgba(0, 120, 110, 0.85);
+  cursor: default;
   z-index: 2000;
   align-items: center;
   justify-content: center;
@@ -501,7 +502,7 @@ html.notice-open {
 .notice-dialog p {
   font-size: 1.1rem;
   line-height: 1.5;
-  margin-bottom: 1.4rem;
+  margin-bottom: 0;
 }
 
 .notice-langs {
@@ -557,10 +558,6 @@ html.notice-open {
 .notice-overlay :focus-visible {
   outline: 3px solid var(--orange-nav);
   outline-offset: 3px;
-}
-
-.notice-close {
-  margin-top: 0;
 }
 
 /* ----------  FLYER LIGHTBOX  ---------- */
@@ -724,4 +721,16 @@ html.tennis-game-active.tennis-game-pointer .tennis-game-racket {
 .tennis-game-ball--fade {
   opacity: 0;
   transition: opacity 0.4s ease-out;
+}
+
+/* Lightbox uses the system cursor; the racket stays behind the overlay. */
+html.notice-open.tennis-game-active,
+html.notice-open.tennis-game-active .notice-overlay,
+html.notice-open.tennis-game-active .notice-overlay * {
+  cursor: default !important;
+}
+
+html.notice-open.tennis-game-active .notice-x,
+html.notice-open.tennis-game-active .notice-lang {
+  cursor: pointer !important;
 }
